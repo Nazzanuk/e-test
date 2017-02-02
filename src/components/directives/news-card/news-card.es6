@@ -1,12 +1,21 @@
 app.component('newsCardItem', {
     templateUrl: 'news-card.html',
-    controllerAs: 'newsCard',
+    controllerAs: "$ctrl",
     bindings: {
-        id: '@'
+        id: '=',
+        serviceUrl: '='
     },
-    controller: function ($element, $timeout) {
+    controller: function ($element, $timeout, API) {
+        this.isReady = false;
+        this.newsCard = {};
 
-        var init = () => {};
+        const init = () => {
+            console.log('newsCardItem', this);
+            API.load(this.serviceUrl, {id:this.id}).then(response => {
+                this.newsCard = response[0];
+                this.isReady = true;
+            });
+        };
 
         init();
 

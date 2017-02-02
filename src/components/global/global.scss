@@ -53,9 +53,10 @@ body {
 
 [screen] {
   opacity: 0;
-  padding-top: 120px;
+  //padding-top: 120px;
   transition: .3s;
-  min-height: calc(100vh - 120px);
+  //min-height: calc(100vh - 120px);
+  min-height: calc(100vh);
 
   &.active {
     opacity: 1;
@@ -65,9 +66,9 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: 'Oswald', sans-serif;
   font-family: 'Lato', sans-serif;
-  margin: 15px 0 0;
+  margin: 30px 0 0;
   color: $primary;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
 
   &:first-child {
@@ -79,23 +80,33 @@ h1 {
   color: $secondary;
   font-size: 30px;
   font-weight: 600;
+  margin: 30px 0 20px;
 }
 
 h2 {
-  color: $secondary;
+  margin: 30px 0 20px;
   font-size: 22px;
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 p {
-  margin: 15px 0 0;
+  margin: 10px 0 0;
   //font-size: 15px;
 
   &:first-child {
     margin: 0;
+  }
+}
+
+.dynamic {
+  opacity: 0;
+  transition: .3s;
+
+  &.active {
+    opacity: 1;
   }
 }
 
@@ -179,6 +190,8 @@ p {
   border: 1px solid $border;
   overflow: hidden;
   transition: .2s;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
   //border-top: 3px solid $secondary;
   color: inherit;
   text-decoration: inherit;
@@ -186,6 +199,23 @@ p {
   &:hover {
     text-decoration: inherit;
     color: inherit;
+  }
+
+  &.box-primary {
+    background: $primary;
+    color: white;
+
+    h1, h2, h3, h4, p {
+      color: white;
+    }
+  }
+
+  .box-icon {
+    height: 60px;
+    width: 60px;
+    margin: 20px;
+    border-radius: 70px;
+    background: $yellow;
   }
 
   &.box-light {
@@ -196,7 +226,7 @@ p {
     cursor: pointer;
 
     &:hover {
-      transform: scale(1.03);
+      transform: translateY(-10px);
     }
   }
 

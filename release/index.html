@@ -24,7 +24,7 @@
 </head>
 <body data-ng-app="app">
 
-<header-item></header-item>
+<!--<header-item></header-item>-->
 
 <!-- screen contents -->
 <div ui-view></div>
@@ -71,39 +71,6 @@
     </div>
 
 </script>
-<script type="text/ng-template" id="content.html">
-    <div class="content">
-        <div class="container">
-            <div ng-transclude="content"></div>
-        </div>
-    </div>
-</script>
-<script type="text/ng-template" id="hero.html">
-    <div class="container">
-        <div class="hero">
-            <div class="flex flex-row flex-wrap-mob">
-                <div class="hero-banner" style="background-image: url('https://unsplash.it/1200/500/?random');">
-                    <div class="banner-overlay">
-                        Title 1
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&2')">
-                        <div class="banner-overlay">
-                            Title 2
-                        </div>
-                    </div>
-                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&3')">
-                        <div class="banner-overlay">
-                            Title 3
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</script>
 <script type="text/ng-template" id="header.html">
     <div class="header">
         <div class="header-top">
@@ -141,6 +108,45 @@
 
         </div>
 
+    </div>
+</script>
+<script type="text/ng-template" id="info-box.html">
+    <div class="box box-primary flex flex-row">
+        <div class="box-icon"></div>
+
+        <div class="box-content flex" style="padding-left: 0">
+            <h3>Section Update</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse excepturi iste minima pariatur sunt? Ad aliquam amet delectus dicta ducimus est excepturi illo ipsam modi molestiae nisi, possimus veniam!</p>
+        </div>
+
+
+    </div>
+
+</script>
+<script type="text/ng-template" id="hero.html">
+    <div class="container">
+        <div class="hero">
+            <div class="flex flex-row flex-wrap-mob">
+                <div class="hero-banner" style="background-image: url('https://unsplash.it/1200/500/?random');">
+                    <div class="banner-overlay">
+                        Title 1
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&2')">
+                        <div class="banner-overlay">
+                            Title 2
+                        </div>
+                    </div>
+                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&3')">
+                        <div class="banner-overlay">
+                            Title 3
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </script>
 <script type="text/ng-template" id="links.html">
@@ -196,6 +202,41 @@
     </div>
 
 </script>
+<script type="text/ng-template" id="news.html">
+    <div class="news">
+        <div class="container">
+            <div class="flex flex-row flex-wrap box-container">
+
+                <div class="box box-margin box-clickable" style="min-width: 300px">
+                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&4')"></div>
+                    <div class="box-content">
+                        <h3>Aspernatur ea magni nulla officiis.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
+                    </div>
+                </div>
+
+                <div class="box box-margin box-clickable" style="min-width: 300px">
+                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&5')"></div>
+                    <div class="box-content">
+                        <h3>Inventore obcaecati provident suscipit.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
+                    </div>
+                </div>
+
+                <div class="box box-margin box-clickable" style="min-width: 300px">
+                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&6')"></div>
+                    <div class="box-content">
+                        <h3>Fulit maxime sunt</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</script>
 <script type="text/ng-template" id="media.html">
     <div class="box box-gap">
         <div class="box-content media flex flex-row flex-wrap">
@@ -211,13 +252,12 @@
 
 </script>
 <script type="text/ng-template" id="news-card.html">
-    <div class="news-card">
-
-        <a class="box box-margin box-clickable" style="min-width: 250px">
-            <span class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&4')"></span>
+    <div class="news-card dynamic" ng-class="{active:$ctrl.isReady}">
+        <a class="box box-margin box-clickable" style="min-width: 275px">
+            <span class="box-image" style="background-image: url('{{$ctrl.newsCard.image}}')"></span>
             <span class="box-content">
-                <h3>Heading</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
+                <h3 ng-bind="$ctrl.newsCard.title"></h3>
+                <p ng-bind="$ctrl.newsCard.description"></p>
             </span>
         </a>
     </div>
@@ -272,41 +312,6 @@
             </div>
         </div>
     </div>
-</script>
-<script type="text/ng-template" id="news.html">
-    <div class="news">
-        <div class="container">
-            <div class="flex flex-row flex-wrap box-container">
-
-                <div class="box box-margin box-clickable" style="min-width: 300px">
-                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&4')"></div>
-                    <div class="box-content">
-                        <h3>Aspernatur ea magni nulla officiis.</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
-                    </div>
-                </div>
-
-                <div class="box box-margin box-clickable" style="min-width: 300px">
-                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&5')"></div>
-                    <div class="box-content">
-                        <h3>Inventore obcaecati provident suscipit.</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
-                    </div>
-                </div>
-
-                <div class="box box-margin box-clickable" style="min-width: 300px">
-                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&6')"></div>
-                    <div class="box-content">
-                        <h3>Fulit maxime sunt</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
 </script>
 <script type="text/ng-template" id="twitter.html">
     <div class="box box-gap">
@@ -428,15 +433,35 @@
 <script type="text/ng-template" id="home-screen.html">
     <div screen="home">
 
+        <div class="section white">
+            <div class="container">
+                <info-box-item></info-box-item>
+            </div>
+        </div>
+
         <div class="section">
             <div class="container">
+
                 <h1>Latest News</h1>
                 <div class="gap"></div>
                 <div class="flex flex-row flex-wrap box-container">
-                    <news-card-item id="1"></news-card-item>
-                    <news-card-item id="1"></news-card-item>
-                    <news-card-item id="1"></news-card-item>
+                    <news-card-item id="1" service-url="'public/json/news-card.json'"></news-card-item>
+                    <news-card-item id="1" service-url="'public/json/news-card.json'"></news-card-item>
+                    <news-card-item id="1" service-url="'public/json/news-card.json'"></news-card-item>
+                    <news-card-item id="1" service-url="'public/json/news-card.json'"></news-card-item>
+                    <news-card-item id="1" service-url="'public/json/news-card.json'"></news-card-item>
                 </div>
+            </div>
+        </div>
+
+        <div class="section white">
+            <div class="container">
+
+                <h1>Other News</h1>
+                <h2>Accusamus consectetur nobis omnis quod repellendus repudiandae?</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi asperiores consectetur cum deleniti dolores enim eos explicabo facere impedit ipsa libero magni maxime minima neque nulla perspiciatis porro possimus praesentium quisquam, ratione recusandae rerum sequi sit veritatis voluptates, voluptatibus. Accusamus commodi dicta eligendi rerum, tempore vitae voluptatum. Nam, non?</p>
+                <div class="gap"></div>
             </div>
         </div>
 

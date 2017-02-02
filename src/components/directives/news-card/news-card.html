@@ -1,11 +1,10 @@
 <script type="text/ng-template" id="news-card.html">
-    <div class="news-card">
-
-        <a class="box box-margin box-clickable" style="min-width: 250px">
-            <span class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&4')"></span>
+    <div class="news-card dynamic" ng-class="{active:$ctrl.isReady}">
+        <a class="box box-margin box-clickable" style="min-width: 275px">
+            <span class="box-image" style="background-image: url('{{$ctrl.newsCard.image}}')"></span>
             <span class="box-content">
-                <h3>Heading</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
+                <h3 ng-bind="$ctrl.newsCard.title"></h3>
+                <p ng-bind="$ctrl.newsCard.description"></p>
             </span>
         </a>
     </div>

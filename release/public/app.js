@@ -51,15 +51,38 @@ var Route = function Route(name, url, resolve) {
     });
 };
 
-app.service('API', function ($state, $stateParams, $timeout) {
+app.service('API', function ($state, $stateParams, $timeout, $http) {
 
-    var serviceUrl = "";
+    var API = "/";
+
+    var getReq = function getReq(url, data) {
+        var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'get';
+
+        return $http[type](url, { params: data }).then(function (response) {
+            console.log('req response', response);
+            return response.data;
+        }, function (err) {
+            console.error(err);
+            return $q.reject();
+        });
+    };
+
+    var load = function load(url, data) {
+        return getReq(API + url, data);
+    };
+
+    var loadNewsCard = function loadNewsCard(data) {
+        return getReq(API + "public/json/news-card.json", data);
+    };
 
     var init = function init() {};
 
     init();
 
-    return {};
+    return {
+        load: load,
+        loadNewsCard: loadNewsCard
+    };
 });
 
 app.service('Menu', function ($state, $stateParams, $timeout) {
@@ -109,16 +132,39 @@ app.component('eventsItem', {
     }
 });
 
-app.component('contentItem', {
-    templateUrl: 'content.html',
-    controllerAs: 'content',
-    transclude: {
-        content: '?content'
+app.component('headerItem', {
+    templateUrl: 'header.html',
+    controllerAs: 'header',
+    bindings: {
+        img: '@'
     },
-    bindings: {},
-    controller: function controller($element, $timeout) {
+    controller: function controller(Menu) {
 
         var init = function init() {};
+
+        init();
+
+        _.extend(this, {
+            getPages: Menu.getPages,
+            setPage: Menu.setPage,
+            isCurrentPage: Menu.isCurrentPage
+        });
+    }
+});
+
+app.component('infoBoxItem', {
+    templateUrl: 'info-box.html',
+    controllerAs: "$ctrl",
+    bindings: {
+        id: '=',
+        serviceUrl: '='
+    },
+    controller: function controller($element, $timeout, API) {
+        var _this = this;
+
+        var init = function init() {
+            console.log('infoBoxItem', _this);
+        };
 
         init();
 
@@ -143,29 +189,26 @@ app.component('heroItem', {
     }
 });
 
-app.component('headerItem', {
-    templateUrl: 'header.html',
-    controllerAs: 'header',
+app.component('linksItem', {
+    templateUrl: 'links.html',
+    controllerAs: 'links',
     bindings: {
-        img: '@'
+        img: '@',
+        heading: '@'
     },
-    controller: function controller(Menu) {
+    controller: function controller($element, $timeout) {
 
         var init = function init() {};
 
         init();
 
-        _.extend(this, {
-            getPages: Menu.getPages,
-            setPage: Menu.setPage,
-            isCurrentPage: Menu.isCurrentPage
-        });
+        _.extend(this, {});
     }
 });
 
-app.component('linksItem', {
-    templateUrl: 'links.html',
-    controllerAs: 'links',
+app.component('newsItem', {
+    templateUrl: 'news.html',
+    controllerAs: 'news',
     bindings: {
         img: '@',
         heading: '@'
@@ -199,13 +242,24 @@ app.component('mediaItem', {
 
 app.component('newsCardItem', {
     templateUrl: 'news-card.html',
-    controllerAs: 'newsCard',
+    controllerAs: "$ctrl",
     bindings: {
-        id: '@'
+        id: '=',
+        serviceUrl: '='
     },
-    controller: function controller($element, $timeout) {
+    controller: function controller($element, $timeout, API) {
+        var _this2 = this;
 
-        var init = function init() {};
+        this.isReady = false;
+        this.newsCard = {};
+
+        var init = function init() {
+            console.log('newsCardItem', _this2);
+            API.load(_this2.serviceUrl, { id: _this2.id }).then(function (response) {
+                _this2.newsCard = response[0];
+                _this2.isReady = true;
+            });
+        };
 
         init();
 
@@ -216,23 +270,6 @@ app.component('newsCardItem', {
 app.component('servicesItem', {
     templateUrl: 'services.html',
     controllerAs: 'services',
-    bindings: {
-        img: '@',
-        heading: '@'
-    },
-    controller: function controller($element, $timeout) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend(this, {});
-    }
-});
-
-app.component('newsItem', {
-    templateUrl: 'news.html',
-    controllerAs: 'news',
     bindings: {
         img: '@',
         heading: '@'
