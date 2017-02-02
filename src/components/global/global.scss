@@ -1,0 +1,225 @@
+$body: #224960;
+$primary: #0a6aaa;
+$secondary: #224960;
+$yellow: #ffee5f;
+$border: #e7e8e8;
+$light: #f8f8f8;
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+  background: lighten($light, 5%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  font-weight: 500;
+  color: $body;
+  min-height: 100vh;
+}
+
+input, textarea {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: $light;
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 990px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 991px) {
+    @content;
+  }
+}
+
+.fa {
+  line-height: inherit;
+}
+
+[screen] {
+  opacity: 0;
+  padding-top: 120px;
+  transition: .3s;
+  min-height: calc(100vh - 120px);
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Lato', sans-serif;
+  margin: 15px 0 0;
+  color: $primary;
+  font-weight: 500;
+  line-height: 1;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+h1 {
+  color: $secondary;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+h2 {
+  color: $secondary;
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+p {
+  margin: 15px 0 0;
+  //font-size: 15px;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.section-title {
+  line-height: 35px;
+  padding: 0 15px;
+  background: white;
+  //box-shadow: 0 15px 75px rgba(23, 55, 87, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  border: 1px solid $border;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.section {
+  padding: 30px 0;
+
+  &.white {
+    background: white;
+  }
+
+  &.light {
+    background: $light;
+  }
+
+  &.flush {
+    padding: 0;
+    margin: 30px 0;
+  }
+
+  &.gap {
+    margin-top: 30px;
+    padding-top: 30px;
+  }
+}
+
+.gap {
+  height: 30px;
+}
+
+.tabs {
+  //margin-top: 30px;
+  height: 35px;
+  //padding-top: 30px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  //border-radius: 3px 3px 0 0;
+  //overflow: hidden;
+
+  .tab {
+    height: 35px;
+    line-height: 32px;
+    padding: 0 15px;
+    background: darken($light, 5%);
+    border-top: solid 3px darken($light, 10%);
+    cursor: pointer;
+    transition: .2s;
+    border-radius: 3px 3px 0 0;
+    margin-right: 3px;
+
+    &.active {
+      background: white;
+      border-top: solid 3px $secondary;
+    }
+
+    &:hover {
+      background: white;
+    }
+  }
+}
+
+.box-container {
+  margin: -15px;
+}
+
+.box {
+  display: block;
+  flex: 1 1 0;
+  background: white;
+  border-radius: 5px;
+  //box-shadow: 0 15px 75px rgba(23, 55, 87, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  border: 1px solid $border;
+  overflow: hidden;
+  transition: .2s;
+  //border-top: 3px solid $secondary;
+  color: inherit;
+  text-decoration: inherit;
+
+  &:hover {
+    text-decoration: inherit;
+    color: inherit;
+  }
+
+  &.box-light {
+    background: $light;
+  }
+
+  &.box-clickable {
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &.box-gap {
+    margin-top: 30px;
+  }
+
+  &.box-margin {
+    margin: 15px;
+  }
+
+  .box-image {
+    display: block;
+    height: 200px;
+    background: $light;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid $border;
+  }
+
+  .box-content {
+    display: block;
+    padding: 20px;
+  }
+}
