@@ -36,8 +36,15 @@ gulp.task('copy-public', () =>
         .pipe(gulp.dest("release/public"))
 );
 
-gulp.task("gen-html", () =>
+gulp.task("gen-html", () => {
     gulp.src([
+            "src/components/directives/**/*.html",
+            "src/components/screens/**/*.html"
+        ])
+        .pipe(concat("templates.html"))
+        .pipe(gulp.dest('release'));
+
+    return gulp.src([
             "src/components/head/head.html",
             "src/components/**/!(footer)*.html",
             "src/components/footer/footer.html"
@@ -45,8 +52,8 @@ gulp.task("gen-html", () =>
         .pipe(concat("index.ejs"))
         .pipe(gulp.dest('server/views'))
         .pipe(concat("index.html"))
-        .pipe(gulp.dest('release'))
-);
+        .pipe(gulp.dest('release'));
+});
 
 gulp.task('gen-js', () =>
     gulp.src(['src/components/app.es6', 'src/components/**/*.es6'])

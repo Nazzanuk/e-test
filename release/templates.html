@@ -1,106 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-    <!--to use real urls instead of hashes uncomment below-->
-    <!--<base href="/">-->
-
-    <title>MCS Portal</title>
-    <title><%= title %></title>
-    <meta name="description" content=""/>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="public/lib.css"/>
-    <link rel="stylesheet" href="public/app.css"/>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,500,700,900" rel="stylesheet">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-</head>
-<body data-ng-app="app">
-
-<header-item></header-item>
-
-<!-- screen contents -->
-<div ui-view></div>
-
-
-<script type="text/ng-template" id="events.html">
-    <div class="box box-gap">
-        <div class="events flex">
-
-            <div class="event flex flex-row">
-                <div class="event-date flex flex-justify flex-align flex-min">
-                    <div class="number">12</div>
-                    <div class="month">Aug</div>
-                </div>
-                <div>
-                    <h3>Aliquam ducimus odit?</h3>
-                    <p>Ad atque consequuntur incidunt molestiae tempore tenetur!</p>
-                </div>
-            </div>
-
-            <div class="event flex flex-row">
-                <div class="event-date flex flex-justify flex-align flex-min">
-                    <div class="number">23</div>
-                    <div class="month">Sep</div>
-                </div>
-                <div>
-                    <h3>Enim fuga vel</h3>
-                    <p>Cupiditate enim explicabo impedit ipsa omnis repudiandae?</p>
-                </div>
-            </div>
-
-            <div class="event flex flex-row">
-                <div class="event-date flex flex-justify flex-align flex-min">
-                    <div class="number">30</div>
-                    <div class="month">Jul</div>
-                </div>
-                <div>
-                    <h3>Beatae eos neque repellendus</h3>
-                    <p>Alias illo mollitia obcaecati odit repudiandae sit.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</script>
 <script type="text/ng-template" id="content.html">
     <div class="content">
         <div class="container">
             <div ng-transclude="content"></div>
-        </div>
-    </div>
-</script>
-<script type="text/ng-template" id="hero.html">
-    <div class="container">
-        <div class="hero">
-            <div class="flex flex-row flex-wrap-mob">
-                <div class="hero-banner" style="background-image: url('https://unsplash.it/1200/500/?random');">
-                    <div class="banner-overlay">
-                        Title 1
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&2')">
-                        <div class="banner-overlay">
-                            Title 2
-                        </div>
-                    </div>
-                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&3')">
-                        <div class="banner-overlay">
-                            Title 3
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
 </script>
@@ -142,6 +43,47 @@
         </div>
 
     </div>
+</script>
+<script type="text/ng-template" id="events.html">
+    <div class="box box-gap">
+        <div class="events flex">
+
+            <div class="event flex flex-row">
+                <div class="event-date flex flex-justify flex-align flex-min">
+                    <div class="number">12</div>
+                    <div class="month">Aug</div>
+                </div>
+                <div>
+                    <h3>Aliquam ducimus odit?</h3>
+                    <p>Ad atque consequuntur incidunt molestiae tempore tenetur!</p>
+                </div>
+            </div>
+
+            <div class="event flex flex-row">
+                <div class="event-date flex flex-justify flex-align flex-min">
+                    <div class="number">23</div>
+                    <div class="month">Sep</div>
+                </div>
+                <div>
+                    <h3>Enim fuga vel</h3>
+                    <p>Cupiditate enim explicabo impedit ipsa omnis repudiandae?</p>
+                </div>
+            </div>
+
+            <div class="event flex flex-row">
+                <div class="event-date flex flex-justify flex-align flex-min">
+                    <div class="number">30</div>
+                    <div class="month">Jul</div>
+                </div>
+                <div>
+                    <h3>Beatae eos neque repellendus</h3>
+                    <p>Alias illo mollitia obcaecati odit repudiandae sit.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </script>
 <script type="text/ng-template" id="links.html">
     <div class="box box-gap">
@@ -196,6 +138,32 @@
     </div>
 
 </script>
+<script type="text/ng-template" id="hero.html">
+    <div class="container">
+        <div class="hero">
+            <div class="flex flex-row flex-wrap-mob">
+                <div class="hero-banner" style="background-image: url('https://unsplash.it/1200/500/?random');">
+                    <div class="banner-overlay">
+                        Title 1
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&2')">
+                        <div class="banner-overlay">
+                            Title 2
+                        </div>
+                    </div>
+                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&3')">
+                        <div class="banner-overlay">
+                            Title 3
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</script>
 <script type="text/ng-template" id="media.html">
     <div class="box box-gap">
         <div class="box-content media flex flex-row flex-wrap">
@@ -206,6 +174,41 @@
             <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&104');"></div>
             <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&105');"></div>
             <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&106');"></div>
+        </div>
+    </div>
+
+</script>
+<script type="text/ng-template" id="news.html">
+    <div class="news">
+        <div class="container">
+            <div class="flex flex-row flex-wrap box-container">
+
+                <div class="box box-margin box-clickable" style="min-width: 300px">
+                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&4')"></div>
+                    <div class="box-content">
+                        <h3>Aspernatur ea magni nulla officiis.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
+                    </div>
+                </div>
+
+                <div class="box box-margin box-clickable" style="min-width: 300px">
+                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&5')"></div>
+                    <div class="box-content">
+                        <h3>Inventore obcaecati provident suscipit.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
+                    </div>
+                </div>
+
+                <div class="box box-margin box-clickable" style="min-width: 300px">
+                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&6')"></div>
+                    <div class="box-content">
+                        <h3>Fulit maxime sunt</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
 
@@ -272,41 +275,6 @@
             </div>
         </div>
     </div>
-</script>
-<script type="text/ng-template" id="news.html">
-    <div class="news">
-        <div class="container">
-            <div class="flex flex-row flex-wrap box-container">
-
-                <div class="box box-margin box-clickable" style="min-width: 300px">
-                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&4')"></div>
-                    <div class="box-content">
-                        <h3>Aspernatur ea magni nulla officiis.</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
-                    </div>
-                </div>
-
-                <div class="box box-margin box-clickable" style="min-width: 300px">
-                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&5')"></div>
-                    <div class="box-content">
-                        <h3>Inventore obcaecati provident suscipit.</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
-                    </div>
-                </div>
-
-                <div class="box box-margin box-clickable" style="min-width: 300px">
-                    <div class="box-image" style="background-image: url('https://unsplash.it/1200/500/?random&6')"></div>
-                    <div class="box-content">
-                        <h3>Fulit maxime sunt</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quis quisquam repellat sapiente? Aliquid assumenda blanditiis eligendi labore tempore voluptatum.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
 </script>
 <script type="text/ng-template" id="twitter.html">
     <div class="box box-gap">
@@ -442,8 +410,3 @@
 
     </div>
 </script>
-<script src="public/lib.js"></script>
-<script src="public/app.js"></script>
-
-</body>
-</html>

@@ -92,6 +92,23 @@ app.service('Menu', function ($state, $stateParams, $timeout) {
     };
 });
 
+app.component('eventsItem', {
+    templateUrl: 'events.html',
+    controllerAs: 'events',
+    bindings: {
+        img: '@',
+        heading: '@'
+    },
+    controller: function controller($element, $timeout) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend(this, {});
+    }
+});
+
 app.component('contentItem', {
     templateUrl: 'content.html',
     controllerAs: 'content',
@@ -109,9 +126,9 @@ app.component('contentItem', {
     }
 });
 
-app.component('eventsItem', {
-    templateUrl: 'events.html',
-    controllerAs: 'events',
+app.component('heroItem', {
+    templateUrl: 'hero.html',
+    controllerAs: 'hero',
     bindings: {
         img: '@',
         heading: '@'
@@ -146,23 +163,6 @@ app.component('headerItem', {
     }
 });
 
-app.component('heroItem', {
-    templateUrl: 'hero.html',
-    controllerAs: 'hero',
-    bindings: {
-        img: '@',
-        heading: '@'
-    },
-    controller: function controller($element, $timeout) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend(this, {});
-    }
-});
-
 app.component('linksItem', {
     templateUrl: 'links.html',
     controllerAs: 'links',
@@ -183,23 +183,6 @@ app.component('linksItem', {
 app.component('mediaItem', {
     templateUrl: 'media.html',
     controllerAs: 'media',
-    bindings: {
-        img: '@',
-        heading: '@'
-    },
-    controller: function controller($element, $timeout) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend(this, {});
-    }
-});
-
-app.component('newsItem', {
-    templateUrl: 'news.html',
-    controllerAs: 'news',
     bindings: {
         img: '@',
         heading: '@'
@@ -247,6 +230,23 @@ app.component('servicesItem', {
     }
 });
 
+app.component('newsItem', {
+    templateUrl: 'news.html',
+    controllerAs: 'news',
+    bindings: {
+        img: '@',
+        heading: '@'
+    },
+    controller: function controller($element, $timeout) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend(this, {});
+    }
+});
+
 app.component('twitterItem', {
     templateUrl: 'twitter.html',
     controllerAs: 'twitter',
@@ -264,20 +264,20 @@ app.component('twitterItem', {
     }
 });
 
-app.controller('DemoScreen', function ($element, $timeout, $scope) {
+app.controller('AboutScreen', function ($element, $timeout, $scope) {
 
-    var init = function init() {};
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
 
     init();
 
     _.extend($scope, {});
 });
 
-app.controller('AboutScreen', function ($element, $timeout, $scope) {
+app.controller('DemoScreen', function ($element, $timeout, $scope) {
 
-    var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
+    var init = function init() {};
 
     init();
 
