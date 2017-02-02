@@ -42,7 +42,7 @@ gulp.task("gen-html", () => {
             "src/components/screens/**/*.html"
         ])
         .pipe(concat("templates.html"))
-        .pipe(gulp.dest('release'));
+        .pipe(gulp.dest('release/public'));
 
     return gulp.src([
             "src/components/head/head.html",

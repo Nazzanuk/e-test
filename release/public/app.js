@@ -115,23 +115,6 @@ app.service('Menu', function ($state, $stateParams, $timeout) {
     };
 });
 
-app.component('eventsItem', {
-    templateUrl: 'events.html',
-    controllerAs: 'events',
-    bindings: {
-        img: '@',
-        heading: '@'
-    },
-    controller: function controller($element, $timeout) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend(this, {});
-    }
-});
-
 app.component('headerItem', {
     templateUrl: 'header.html',
     controllerAs: 'header',
@@ -152,19 +135,16 @@ app.component('headerItem', {
     }
 });
 
-app.component('infoBoxItem', {
-    templateUrl: 'info-box.html',
-    controllerAs: "$ctrl",
+app.component('eventsItem', {
+    templateUrl: 'events.html',
+    controllerAs: 'events',
     bindings: {
-        id: '=',
-        serviceUrl: '='
+        img: '@',
+        heading: '@'
     },
-    controller: function controller($element, $timeout, API) {
-        var _this = this;
+    controller: function controller($element, $timeout) {
 
-        var init = function init() {
-            console.log('infoBoxItem', _this);
-        };
+        var init = function init() {};
 
         init();
 
@@ -189,9 +169,46 @@ app.component('heroItem', {
     }
 });
 
+app.component('infoBoxItem', {
+    templateUrl: 'info-box.html',
+    controllerAs: "$ctrl",
+    bindings: {
+        id: '=',
+        serviceUrl: '='
+    },
+    controller: function controller($element, $timeout, API) {
+        var _this = this;
+
+        var init = function init() {
+            console.log('infoBoxItem', _this);
+        };
+
+        init();
+
+        _.extend(this, {});
+    }
+});
+
 app.component('linksItem', {
     templateUrl: 'links.html',
     controllerAs: 'links',
+    bindings: {
+        img: '@',
+        heading: '@'
+    },
+    controller: function controller($element, $timeout) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend(this, {});
+    }
+});
+
+app.component('mediaItem', {
+    templateUrl: 'media.html',
+    controllerAs: 'media',
     bindings: {
         img: '@',
         heading: '@'
@@ -223,9 +240,9 @@ app.component('newsItem', {
     }
 });
 
-app.component('mediaItem', {
-    templateUrl: 'media.html',
-    controllerAs: 'media',
+app.component('servicesItem', {
+    templateUrl: 'services.html',
+    controllerAs: 'services',
     bindings: {
         img: '@',
         heading: '@'
@@ -260,23 +277,6 @@ app.component('newsCardItem', {
                 _this2.isReady = true;
             });
         };
-
-        init();
-
-        _.extend(this, {});
-    }
-});
-
-app.component('servicesItem', {
-    templateUrl: 'services.html',
-    controllerAs: 'services',
-    bindings: {
-        img: '@',
-        heading: '@'
-    },
-    controller: function controller($element, $timeout) {
-
-        var init = function init() {};
 
         init();
 

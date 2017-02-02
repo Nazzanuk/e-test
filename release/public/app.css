@@ -197,27 +197,6 @@ p {
     -ms-flex-item-align: end;
         align-self: flex-end; }
 
-events-item .events .event {
-  padding: 15px 0;
-  margin: 0 15px;
-  border-bottom: 3px solid #f8f8f8; }
-  events-item .events .event:last-child {
-    border: none; }
-  events-item .events .event .event-date {
-    background: #0a6aaa;
-    color: white;
-    height: 60px;
-    min-width: 60px;
-    max-width: 60px;
-    border-radius: 3px;
-    margin-right: 15px;
-    text-align: center;
-    font-family: 'Oswald', sans-serif; }
-    events-item .events .event .event-date .number {
-      font-size: 23px; }
-  events-item .events .event p {
-    margin-top: 5px; }
-
 header-item .header {
   position: absolute;
   position: fixed;
@@ -297,9 +276,26 @@ header-item .header {
         padding: 0 15px;
         outline: none; }
 
-info-box-item {
-  -ms-flex: 1;
-      flex: 1; }
+events-item .events .event {
+  padding: 15px 0;
+  margin: 0 15px;
+  border-bottom: 3px solid #f8f8f8; }
+  events-item .events .event:last-child {
+    border: none; }
+  events-item .events .event .event-date {
+    background: #0a6aaa;
+    color: white;
+    height: 60px;
+    min-width: 60px;
+    max-width: 60px;
+    border-radius: 3px;
+    margin-right: 15px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif; }
+    events-item .events .event .event-date .number {
+      font-size: 23px; }
+  events-item .events .event p {
+    margin-top: 5px; }
 
 hero-item .hero {
   position: relative;
@@ -348,6 +344,10 @@ hero-item .hero {
       font-family: 'Oswald', sans-serif;
       font-size: 30px; }
 
+info-box-item {
+  -ms-flex: 1;
+      flex: 1; }
+
 links-item .links .link {
   padding: 15px 0;
   margin: 0 15px;
@@ -373,10 +373,6 @@ media-item .media {
     background-size: cover;
     background-position: center; }
 
-news-card-item {
-  -ms-flex: 1;
-      flex: 1; }
-
 services-item .services {
   background: white;
   box-shadow: 0 15px 75px rgba(23, 55, 87, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
@@ -397,6 +393,10 @@ services-item .services {
       font-family: 'Oswald', sans-serif;
       font-size: 16px;
       margin-top: 5px; }
+
+news-card-item {
+  -ms-flex: 1;
+      flex: 1; }
 
 twitter-item .twitter .tweet {
   padding: 15px 0;
