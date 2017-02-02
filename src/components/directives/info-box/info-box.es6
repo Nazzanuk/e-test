@@ -5,10 +5,11 @@ app.component('infoBoxItem', {
         id: '=',
         serviceUrl: '='
     },
-    controller: function ($element, $timeout, API) {
+    controller: function ($element, $timeout, API, DOMUpdate) {
 
         const init = () => {
             console.log('infoBoxItem', this);
+            DOMUpdate.add('info-box-item');
         };
 
         init();

@@ -1,14 +1,12 @@
-app.controller('HomeScreen', ($element, $timeout, $scope) => {
+app.controller('HomeScreen', ($element, $timeout, $interval, $scope, $rootScope, $compile) => {
 
     var init = () => {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+
     };
 
     init();
 
-    _.extend($scope, {
-
-    });
+    _.extend($scope, {});
 });
 
 

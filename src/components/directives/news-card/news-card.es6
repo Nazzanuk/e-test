@@ -5,12 +5,14 @@ app.component('newsCardItem', {
         id: '=',
         serviceUrl: '='
     },
-    controller: function ($element, $timeout, API) {
+    controller: function ($element, $timeout, API, DOMUpdate) {
         this.isReady = false;
         this.newsCard = {};
 
         const init = () => {
             console.log('newsCardItem', this);
+            DOMUpdate.add('news-card-item');
+
             API.load(this.serviceUrl, {id:this.id}).then(response => {
                 this.newsCard = response[0];
                 this.isReady = true;
