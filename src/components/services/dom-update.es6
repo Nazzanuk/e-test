@@ -24,6 +24,8 @@ app.service('DOMUpdate', ($state, $stateParams, $timeout, $http, $rootScope, $co
 
     const render = ($el) => {
         const $newElement = $compile($el)($rootScope);
+        console.log('$el', $el);
+        console.log('outerHTML', $el[0].outerHTML);
         $el.replaceWith($newElement);
     };
 

@@ -71,32 +71,6 @@
     </div>
 
 </script>
-<script type="text/ng-template" id="hero.html">
-    <div class="container">
-        <div class="hero">
-            <div class="flex flex-row flex-wrap-mob">
-                <div class="hero-banner" style="background-image: url('https://unsplash.it/1200/500/?random');">
-                    <div class="banner-overlay">
-                        Title 1
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&2')">
-                        <div class="banner-overlay">
-                            Title 2
-                        </div>
-                    </div>
-                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&3')">
-                        <div class="banner-overlay">
-                            Title 3
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</script>
 <script type="text/ng-template" id="header.html">
     <div class="header">
         <div class="header-top">
@@ -135,6 +109,45 @@
         </div>
 
     </div>
+</script>
+<script type="text/ng-template" id="hero.html">
+    <div class="container">
+        <div class="hero">
+            <div class="flex flex-row flex-wrap-mob">
+                <div class="hero-banner" style="background-image: url('https://unsplash.it/1200/500/?random');">
+                    <div class="banner-overlay">
+                        Title 1
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&2')">
+                        <div class="banner-overlay">
+                            Title 2
+                        </div>
+                    </div>
+                    <div class="hero-banner small" style="background-image: url('https://unsplash.it/1200/500/?random&3')">
+                        <div class="banner-overlay">
+                            Title 3
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="info-box.html">
+    <div class="box box-primary flex flex-row">
+        <div class="box-icon"></div>
+
+        <div class="box-content flex" style="padding-left: 0">
+            <h3>Section Update</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse excepturi iste minima pariatur sunt? Ad aliquam amet delectus dicta ducimus est excepturi illo ipsam modi molestiae nisi, possimus veniam!</p>
+        </div>
+
+
+    </div>
+
 </script>
 <script type="text/ng-template" id="links.html">
     <div class="box box-gap">
@@ -189,33 +202,6 @@
     </div>
 
 </script>
-<script type="text/ng-template" id="info-box.html">
-    <div class="box box-primary flex flex-row">
-        <div class="box-icon"></div>
-
-        <div class="box-content flex" style="padding-left: 0">
-            <h3>Section Update</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse excepturi iste minima pariatur sunt? Ad aliquam amet delectus dicta ducimus est excepturi illo ipsam modi molestiae nisi, possimus veniam!</p>
-        </div>
-
-
-    </div>
-
-</script>
-<script type="text/ng-template" id="media.html">
-    <div class="box box-gap">
-        <div class="box-content media flex flex-row flex-wrap">
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&100');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&101');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&102');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&103');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&104');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&105');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&106');"></div>
-        </div>
-    </div>
-
-</script>
 <script type="text/ng-template" id="news.html">
     <div class="news">
         <div class="container">
@@ -251,6 +237,20 @@
     </div>
 
 </script>
+<script type="text/ng-template" id="media.html">
+    <div class="box box-gap">
+        <div class="box-content media flex flex-row flex-wrap">
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&100');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&101');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&102');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&103');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&104');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&105');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&106');"></div>
+        </div>
+    </div>
+
+</script>
 <script type="text/ng-template" id="news-card.html">
     <div class="news-card dynamic" ng-class="{active:$ctrl.isReady}">
         <a class="box box-margin box-clickable" style="min-width: 275px">
@@ -260,41 +260,6 @@
                 <p ng-bind="$ctrl.newsCard.description"></p>
             </span>
         </a>
-    </div>
-
-</script>
-<script type="text/ng-template" id="twitter.html">
-    <div class="box box-gap">
-        <div class="twitter flex">
-
-            <div class="tweet flex flex-row">
-                <div class="tweet-icon flex flex-justify flex-align flex-min">
-                    <i class="fa fa-twitter"></i>
-                </div>
-                <div class="flex flex-justify">
-                    <p>Deleniti esse est et fugiat iste minus mollitia. Alias amet asperiores doloribus dolorum, mollitia quasi quis voluptatem.</p>
-                </div>
-            </div>
-
-            <div class="tweet flex flex-row">
-                <div class="tweet-icon flex flex-justify flex-align flex-min">
-                    <i class="fa fa-twitter"></i>
-                </div>
-                <div class="flex flex-justify">
-                    <p>At doloremque doloribus dolorum eius est eveniet, explicabo incidunt minus natus quam qui quia quidem quo, ratione saepe sapiente veniam. Error, ex!</p>
-                </div>
-            </div>
-
-            <div class="tweet flex flex-row">
-                <div class="tweet-icon flex flex-justify flex-align flex-min">
-                    <i class="fa fa-twitter"></i>
-                </div>
-                <div class="flex flex-justify">
-                    <p>Ab accusamus aliquid, cum cumque et exercitationem fuga, in iste nostrum perferendis sequi sunt suscipit vel vero!</p>
-                </div>
-            </div>
-
-        </div>
     </div>
 
 </script>
@@ -347,6 +312,41 @@
             </div>
         </div>
     </div>
+</script>
+<script type="text/ng-template" id="twitter.html">
+    <div class="box box-gap">
+        <div class="twitter flex">
+
+            <div class="tweet flex flex-row">
+                <div class="tweet-icon flex flex-justify flex-align flex-min">
+                    <i class="fa fa-twitter"></i>
+                </div>
+                <div class="flex flex-justify">
+                    <p>Deleniti esse est et fugiat iste minus mollitia. Alias amet asperiores doloribus dolorum, mollitia quasi quis voluptatem.</p>
+                </div>
+            </div>
+
+            <div class="tweet flex flex-row">
+                <div class="tweet-icon flex flex-justify flex-align flex-min">
+                    <i class="fa fa-twitter"></i>
+                </div>
+                <div class="flex flex-justify">
+                    <p>At doloremque doloribus dolorum eius est eveniet, explicabo incidunt minus natus quam qui quia quidem quo, ratione saepe sapiente veniam. Error, ex!</p>
+                </div>
+            </div>
+
+            <div class="tweet flex flex-row">
+                <div class="tweet-icon flex flex-justify flex-align flex-min">
+                    <i class="fa fa-twitter"></i>
+                </div>
+                <div class="flex flex-justify">
+                    <p>Ab accusamus aliquid, cum cumque et exercitationem fuga, in iste nostrum perferendis sequi sunt suscipit vel vero!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </script>
 <script type="text/ng-template" id="about-screen.html">
     <div screen="about">

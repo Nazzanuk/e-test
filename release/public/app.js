@@ -111,6 +111,8 @@ app.service('DOMUpdate', function ($state, $stateParams, $timeout, $http, $rootS
 
     var render = function render($el) {
         var $newElement = $compile($el)($rootScope);
+        console.log('$el', $el);
+        console.log('outerHTML', $el[0].outerHTML);
         $el.replaceWith($newElement);
     };
 
@@ -170,23 +172,6 @@ app.component('eventsItem', {
     }
 });
 
-app.component('heroItem', {
-    templateUrl: 'hero.html',
-    controllerAs: 'hero',
-    bindings: {
-        img: '@',
-        heading: '@'
-    },
-    controller: function controller($element, $timeout) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend(this, {});
-    }
-});
-
 app.component('headerItem', {
     templateUrl: 'header.html',
     controllerAs: 'header',
@@ -207,9 +192,9 @@ app.component('headerItem', {
     }
 });
 
-app.component('linksItem', {
-    templateUrl: 'links.html',
-    controllerAs: 'links',
+app.component('heroItem', {
+    templateUrl: 'hero.html',
+    controllerAs: 'hero',
     bindings: {
         img: '@',
         heading: '@'
@@ -245,9 +230,9 @@ app.component('infoBoxItem', {
     }
 });
 
-app.component('mediaItem', {
-    templateUrl: 'media.html',
-    controllerAs: 'media',
+app.component('linksItem', {
+    templateUrl: 'links.html',
+    controllerAs: 'links',
     bindings: {
         img: '@',
         heading: '@'
@@ -265,6 +250,23 @@ app.component('mediaItem', {
 app.component('newsItem', {
     templateUrl: 'news.html',
     controllerAs: 'news',
+    bindings: {
+        img: '@',
+        heading: '@'
+    },
+    controller: function controller($element, $timeout) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend(this, {});
+    }
+});
+
+app.component('mediaItem', {
+    templateUrl: 'media.html',
+    controllerAs: 'media',
     bindings: {
         img: '@',
         heading: '@'
@@ -308,9 +310,9 @@ app.component('newsCardItem', {
     }
 });
 
-app.component('twitterItem', {
-    templateUrl: 'twitter.html',
-    controllerAs: 'twitter',
+app.component('servicesItem', {
+    templateUrl: 'services.html',
+    controllerAs: 'services',
     bindings: {
         img: '@',
         heading: '@'
@@ -325,9 +327,9 @@ app.component('twitterItem', {
     }
 });
 
-app.component('servicesItem', {
-    templateUrl: 'services.html',
-    controllerAs: 'services',
+app.component('twitterItem', {
+    templateUrl: 'twitter.html',
+    controllerAs: 'twitter',
     bindings: {
         img: '@',
         heading: '@'
@@ -364,7 +366,11 @@ app.controller('DemoScreen', function ($element, $timeout, $scope) {
 
 app.controller('HomeScreen', function ($element, $timeout, $interval, $scope, $rootScope, $compile) {
 
-    var init = function init() {};
+    var init = function init() {
+        $timeout(function () {
+            $('body').append('<news-card-item id="1" service-url="\'public/json/news-card.json\'"></news-card-item>');
+        }, 500);
+    };
 
     init();
 

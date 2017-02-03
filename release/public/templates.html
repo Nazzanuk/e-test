@@ -78,19 +78,6 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="info-box.html">
-    <div class="box box-primary flex flex-row">
-        <div class="box-icon"></div>
-
-        <div class="box-content flex" style="padding-left: 0">
-            <h3>Section Update</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse excepturi iste minima pariatur sunt? Ad aliquam amet delectus dicta ducimus est excepturi illo ipsam modi molestiae nisi, possimus veniam!</p>
-        </div>
-
-
-    </div>
-
-</script>
 <script type="text/ng-template" id="hero.html">
     <div class="container">
         <div class="hero">
@@ -116,6 +103,33 @@
             </div>
         </div>
     </div>
+</script>
+<script type="text/ng-template" id="info-box.html">
+    <div class="box box-primary flex flex-row">
+        <div class="box-icon"></div>
+
+        <div class="box-content flex" style="padding-left: 0">
+            <h3>Section Update</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse excepturi iste minima pariatur sunt? Ad aliquam amet delectus dicta ducimus est excepturi illo ipsam modi molestiae nisi, possimus veniam!</p>
+        </div>
+
+
+    </div>
+
+</script>
+<script type="text/ng-template" id="media.html">
+    <div class="box box-gap">
+        <div class="box-content media flex flex-row flex-wrap">
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&100');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&101');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&102');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&103');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&104');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&105');"></div>
+            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&106');"></div>
+        </div>
+    </div>
+
 </script>
 <script type="text/ng-template" id="links.html">
     <div class="box box-gap">
@@ -170,20 +184,6 @@
     </div>
 
 </script>
-<script type="text/ng-template" id="media.html">
-    <div class="box box-gap">
-        <div class="box-content media flex flex-row flex-wrap">
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&100');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&101');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&102');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&103');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&104');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&105');"></div>
-            <div class="media-item" style="background-image: url('https://unsplash.it/1200/500/?random&106');"></div>
-        </div>
-    </div>
-
-</script>
 <script type="text/ng-template" id="news.html">
     <div class="news">
         <div class="container">
@@ -216,18 +216,6 @@
             </div>
 
         </div>
-    </div>
-
-</script>
-<script type="text/ng-template" id="news-card.html">
-    <div class="news-card dynamic" ng-class="{active:$ctrl.isReady}">
-        <a class="box box-margin box-clickable" style="min-width: 275px">
-            <span class="box-image" style="background-image: url('{{$ctrl.newsCard.image}}')"></span>
-            <span class="box-content">
-                <h3 ng-bind="$ctrl.newsCard.title"></h3>
-                <p ng-bind="$ctrl.newsCard.description"></p>
-            </span>
-        </a>
     </div>
 
 </script>
@@ -280,6 +268,18 @@
             </div>
         </div>
     </div>
+</script>
+<script type="text/ng-template" id="news-card.html">
+    <div class="news-card dynamic" ng-class="{active:$ctrl.isReady}">
+        <a class="box box-margin box-clickable" style="min-width: 275px">
+            <span class="box-image" style="background-image: url('{{$ctrl.newsCard.image}}')"></span>
+            <span class="box-content">
+                <h3 ng-bind="$ctrl.newsCard.title"></h3>
+                <p ng-bind="$ctrl.newsCard.description"></p>
+            </span>
+        </a>
+    </div>
+
 </script>
 <script type="text/ng-template" id="twitter.html">
     <div class="box box-gap">
